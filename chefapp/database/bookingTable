@@ -29,7 +29,29 @@ module.exports = function(sequelize, Datatypes) {
         bookingLocation: {
             type: Datatypes.STRING //assuming address. Use one stored in users unless otherwise specified
         },
-        //TODO: Kitchen options if different
-        //special requests
+        bookingSpecialrequests: {
+            type: Datatypes.STRING
+        },
+        //USE STORED UNLESS SPECIFIED
+        bookingStove: {
+            type: Datatypes.STRING, //Making this string rather than Boolean so that we can pass in the type of grill
+            is: ["^[a-z]+$", "i"] // will only allow letters
+        },
+        bookingGrill: {
+            type: Datatypes.STRING,
+            is: ["^[a-z]+$", "i"] // will only allow letters
+        },
+        bookingOven: {
+            type: Datatypes.STRING,
+            is: ["^[a-z]+$", "i"] // will only allow letters
+        },
+        bookingMicrowave: {
+            type: Datatypes.STRING,
+            is: ["^[a-z]+$", "i"] // will only allow letters
+        },
+        bookingSink: {
+            type: Datatypes.STRING,
+            is: ["^[a-z]+$", "i"] // will only allow letters
+        }
     })
 }
