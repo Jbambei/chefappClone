@@ -25,6 +25,9 @@ module.exports = function(sequelize, datatypes) {
             type: Datatypes.STRING,
             isNumeric: true          // will only allow numbers
         },
+        userAddress: {
+            type: Datatypes.STRING
+        },
         //Kitchen objects. More than likely more will be needed
         userStove: {
             type: Datatypes.STRING, //Making this string rather than Boolean so that we can pass in the type of grill
