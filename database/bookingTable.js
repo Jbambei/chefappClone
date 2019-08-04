@@ -54,4 +54,5 @@ module.exports = function(sequelize, Datatypes) {
             is: ["^[a-z]+$", "i"] // will only allow letters
         }
     })
+    return bookingTable
 }

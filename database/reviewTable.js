@@ -22,4 +22,5 @@ module.exports = function(sequelize, datatypes) {
             type: Datatypes.INTEGER //1-5
         }
     })
+    return reveiwTable
 }

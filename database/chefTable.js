@@ -5,12 +5,6 @@ module.exports = function(sequelize, Datatypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        chefName: {
-            type: Datatypes.STRING,
-            required: true,
-            len: [2, 50],
-            is: ["^[a-z]+$", "i"], // will only allow letters
-        },
         chefQualifications: {
             type: Datatypes.STRING,
             required: true,
@@ -32,7 +26,7 @@ module.exports = function(sequelize, Datatypes) {
         chefAvailableBoolean: {
             type: Datatypes.BOOLEAN, //On/off switch for our database.
         },
-        chefAvailibilityFull: {
+        chefFullAvailability: {
             type: Datatypes.STRING // Not sure how google Calendar handles storage. For the sake of having it for now, I've put this in. We'll almost certainly need to change this to accept/format the input correctly
         },
         chefProfilePictureURL: {
@@ -40,4 +34,5 @@ module.exports = function(sequelize, Datatypes) {
             isUrl: true
         }    
     })
+    return chefTable
 }
