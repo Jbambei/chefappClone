@@ -1,53 +1,35 @@
-module.exports = function(sequelize, datatypes) {
-    var userTable = sequelize.define("chefTable", {
+module.exports = function(sequelize, Datatypes) {
+    var consumerInfoTable = sequelize.define("consumerInfoTable", {
         id: {
             type: Datatypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        userFirstName: {
-            type: Datatypes.STRING,
-            required: true,
-            len: [2, 50],
-            is: ["^[a-z]+$", "i"] // will only allow letters
-        },
-        userLastName: {
-            type: Datatypes.STRING,
-            required: true,
-            len: [2, 50],
-            is: ["^[a-z]+$", "i"] // will only allow letters
-        },
-        userAllergies: {
+        consumerAllergies: {
             type: Datatypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
-        },
-        userPhone: {
-            type: Datatypes.STRING,
-            isNumeric: true          // will only allow numbers
-        },
-        userAddress: {
-            type: Datatypes.STRING
         },
         //Kitchen objects. More than likely more will be needed
-        userStove: {
+        consumerStove: {
             type: Datatypes.STRING, //Making this string rather than Boolean so that we can pass in the type of grill
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
-        userGrill: {
+        consumerGrill: {
             type: Datatypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
-        userOven: {
+        consumerOven: {
             type: Datatypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
-        userMicrowave: {
+        consumerMicrowave: {
             type: Datatypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
-        userSink: {
+        consumerSink: {
             type: Datatypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
         }
     })
+    return consumerInfoTable
 }

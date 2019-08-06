@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Datatypes) {
-    var recipe = sequelize.define("recipeTable", {
+    var recipeTable = sequelize.define("recipeTable", {
         id: {
             type: Datatypes.INTEGER,
             primaryKey: true,
@@ -18,4 +18,5 @@ module.exports = function(sequelize, Datatypes) {
             type: Datatypes.BOOLEAN //if we add a top 5/10/15 list
         }
     })
+    return recipeTable
 }
