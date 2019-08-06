@@ -9,21 +9,24 @@ module.exports = function(app) {
         res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
       });
 
-      app.post('/register', (req, res) => {
-        // const { email, username, password } = req.body;
-        // console.log(req.body)
-        // const saltRounds = 10;
-        // bcrypt.hash(password, saltRounds, function (err, hash) {
-          db.User.create({
-            email: req.query.email,
-            username: req.query.username,
-            password: req.query.password
-          }).then((result) => {
-            console.log("User created: ", result);
-            res.json("user created!");
-          })
-        // });
-      });
+      // app.post('/register', (req, res) => {
+      //   // const { email, username, password } = req.body;
+      //   console.log(req.body)
+      //   const email = req.body.email
+      //   const username = req.body.username
+      //   const password = req.body.password
+      //   // const saltRounds = 10;
+      //   // bcrypt.hash(password, saltRounds, function (err, hash) {
+      //     db.User.create({
+      //       email: email,
+      //       username: username,
+      //       password: password
+      //     }).then((result) => {
+      //       console.log("User created: ", result);
+      //       res.json("user created!");
+      //     })
+      //   // });
+      // });
 
 
         // app.post('/register', async(req, res) => {

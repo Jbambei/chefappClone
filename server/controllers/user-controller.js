@@ -19,16 +19,37 @@ router.post('/register', async (req, res) => {
         let data = await user.authorize();
         
         // send back the new user and auth token to the client {user, authToken}
+        console.log(res.json(data))
         return res.json(data);
 
     } catch(err) {
         return res.status(400).send(err);
     }
 });
+    //   router.post('/register', (req, res) => {
+    //     // const { email, username, password } = req.body;
+    //     // console.log(req.body)
+    //     // const email = req.body.email
+    //     // const username = req.body.username
+    //     const password = req.body.password
+    //     const saltRounds = 10;
+    //     bcrypt.hash(password, saltRounds, function (err, hash) {
+    //       User.create({
+    //         email: req.body.email,
+    //         username: req.body.username,
+    //         password: req.body.password
+    //       }).then((result) => {
+    //         console.log("User created: ", result);
+    //         res.json("user created!");
+    //       })
+    //     });
+    //   });
+
 
 // Login Route =====================================================
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
+    console.log(req.body)
 
     // if the username / password is missing, we use status code 400 indicating a bad req was made
     if (!username || !password) {
@@ -39,7 +60,9 @@ router.post('/login', async (req, res) => {
 
     try {
         let user = await User.authenticate(username, password)
+        console.log(user)
         user = await user.authorize();
+        console.log(user)
         return res.json(user);
     } catch (err) {
         return res.status(400).send('Invalid username or password')
