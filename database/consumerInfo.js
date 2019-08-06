@@ -19,15 +19,15 @@ module.exports = function(sequelize, Datatypes) {
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         consumerOven: {
-            type: Datatypes.STRING,
+            type: Datatypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         consumerMicrowave: {
-            type: Datatypes.STRING,
+            type: Datatypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         consumerSink: {
-            type: Datatypes.STRING,
+            type: Datatypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         }
     })
