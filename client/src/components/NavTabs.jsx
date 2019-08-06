@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function NavTabs() {
     return (
-        <header class="navbar">
+        <header className="navbar">
             <section className="navbar-section">
                 <Link to="/" className="navbar-brand mr-2">HachApp</Link>
             </section>
