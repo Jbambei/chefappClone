@@ -33,7 +33,8 @@ app.use(customAuthMiddleware);
 app.use(express.static(`${clientDir}/build`))
 
 // Routing
-require(`./routes/html-routes`)(app) /* Server routes */
+/* Server routes */
+// require(`./routes/html-routes`)(app) 
 // require(`./routes/api-routes`)(app)
 app.use(userController);
 // Requiring our models for syncing
