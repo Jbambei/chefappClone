@@ -1,21 +1,21 @@
 module.exports = function(sequelize, datatypes) {
-    var reveiwTable = sequelize.define("reviewTable", {
+    var reviewTable = sequelize.define("reviewTable", {
         id: {
             type: Datatypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        reveiwChefContent: { 
+        reviewChefContent: { 
             type: Datatypes.STRING,
             required: true,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
-        reveiwRecipeContent: { 
+        reviewRecipeContent: { 
             type: Datatypes.STRING,
             required: true,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
-        reveiwChef: {
+        reviewChef: {
             type: Datatypes.INTEGER //1-5 from dropdown or star click or w/e
         },
         reviewRecipe: {

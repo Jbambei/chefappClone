@@ -26,24 +26,6 @@ router.post('/register', async (req, res) => {
         return res.status(400).send(err);
     }
 });
-    //   router.post('/register', (req, res) => {
-    //     // const { email, username, password } = req.body;
-    //     // console.log(req.body)
-    //     // const email = req.body.email
-    //     // const username = req.body.username
-    //     const password = req.body.password
-    //     const saltRounds = 10;
-    //     bcrypt.hash(password, saltRounds, function (err, hash) {
-    //       User.create({
-    //         email: req.body.email,
-    //         username: req.body.username,
-    //         password: req.body.password
-    //       }).then((result) => {
-    //         console.log("User created: ", result);
-    //         res.json("user created!");
-    //       })
-    //     });
-    //   });
 
 
 // Login Route =====================================================
