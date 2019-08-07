@@ -7,6 +7,7 @@ class FindAChef extends Component {
     constructor(){
         super();
         this.state ={
+            //dummy data imported
             chefs
         };
     }
@@ -22,6 +23,7 @@ class FindAChef extends Component {
         return (        
         <div className="container">
             <h1>Local Chefs</h1>
+            <div className="columns">
             {this.state.chefs.map(chef=> (
                 <ResultList 
                 key={chef.id}
@@ -30,7 +32,9 @@ class FindAChef extends Component {
                 rating={chef.rating}
                 image={chef.image}
             />
-            ))}
+            ))} 
+            </div>
+
         </div>
         )
     }

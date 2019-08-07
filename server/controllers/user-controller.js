@@ -42,11 +42,12 @@ router.post('/login', async (req, res) => {
 
     try {
         let user = await User.authenticate(username, password)
-        console.log(user)
-        user = await user.authorize();
+
+        // user = await user.authorize();
         console.log(user)
         return res.json(user);
     } catch (err) {
+        console.log(err)
         return res.status(400).send('Invalid username or password')
     }
 

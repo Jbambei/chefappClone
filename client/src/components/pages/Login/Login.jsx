@@ -21,7 +21,14 @@ class Login extends Component {
       axios.post(`/login`,{
         username: this.state.username,
         password: this.state.password
-      }).then(res => console.log(res))
+      }).then(({user, authToken}) => {
+        console.log({user, authToken})
+        if (user && authToken.token){
+            document.cookie = authToken.token
+            console.log("cookie taken")
+            window.location="/"
+        }
+    })
       
     };
   

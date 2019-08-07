@@ -15,7 +15,7 @@ function ResultList(props) {
                 Insert Truncated Chef Description Here
             </div>
             <div className="card-footer">
-                <button className="btn btn-primary">View Menu</button>
+                <button className="btn btn-primary">View Profile</button>
             </div>
         </div>
     )
