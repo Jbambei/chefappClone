@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require(`express`); /* NPM Express */
 const bodyParser = require('body-parser'); /* NPM Body Parser */
 const path = require(`path`); 
-const pino = require(`express-pino-logger`)();
+// const pino = require(`express-pino-logger`)();
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const customAuthMiddleware = require('./middleware/custom-auth-middleware');
@@ -18,7 +18,7 @@ app.use(cors());
 // Express middlewear for POST
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(pino);
+// app.use(pino);
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
