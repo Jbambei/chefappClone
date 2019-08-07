@@ -1,4 +1,3 @@
--- bookingTable --
 INSERT INTO 'bookingTable' ('bookingTime', 'bookingEventType', 'bookingNumPeople', 'bookingRecipesOrder', 'bookingLocation', 'bookingSpecialrequests', 'bookingStove', 'bookingGrill', 'bookingOven', 'bookingMicrowave', 'bookingSink')
 VALUES ('11:00', 'event1', 6, 'Pastrami', '2531 sunshine avenue', 'none', 'gas Stove', 'gas Grill', TRUE, TRUE, TRUE )
 

@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS hach_schema;
-CREATE DATABASE hach_schema;
