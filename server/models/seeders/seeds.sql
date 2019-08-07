@@ -44,3 +44,6 @@ VALUES ('asdfoiuasbdfsa', 'sldfiosnadfoiasdn', 3, 1)
 -- userTypeTable
 INSERT INTO 'userTypeTable' ('userType')
 VALUES ('chef')
+
+INSERT INTO 'userTypeTable' ('userType')
+VALUES ('consumer')
