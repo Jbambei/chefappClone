@@ -1,25 +1,25 @@
-module.exports = function(sequelize, datatypes) {
+module.exports = function(sequelize, ImageDataTypes) {
     var reviewTable = sequelize.define("reviewTable", {
         id: {
-            type: Datatypes.INTEGER,
+            type: ImageDataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         reviewChefContent: { 
-            type: Datatypes.STRING,
+            type: ImageDataTypes.STRING,
             required: true,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         reviewRecipeContent: { 
-            type: Datatypes.STRING,
+            type: ImageDataTypes.STRING,
             required: true,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         reviewChef: {
-            type: Datatypes.INTEGER //1-5 from dropdown or star click or w/e
+            type: ImageDataTypes.INTEGER //1-5 from dropdown or star click or w/e
         },
         reviewRecipe: {
-            type: Datatypes.INTEGER //1-5
+            type: ImageDataTypes.INTEGER //1-5
         }
     })
     return reviewTable

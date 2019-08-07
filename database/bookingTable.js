@@ -1,7 +1,7 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function(sequelize, DataTypes) {
     var bookingTable = sequelize.define("bookingTable", {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
@@ -11,46 +11,46 @@ module.exports = function(sequelize, Datatypes) {
             allowNull: false
           },
         bookingTime: {
-            type: Datatypes.STRING, // not sure how the calander will pass info, assuming string date for now
+            type: DataTypes.STRING, // not sure how the calander will pass info, assuming string date for now
             required: true
         },
         bookingEventType: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             required: true,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         bookingNumPeople: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             required: true
         },
         bookingRecipesOrder: {
-            type: Datatypes.STRING, //will require foreign key or to be passed in as strings
+            type: DataTypes.STRING, //will require foreign key or to be passed in as strings
         },
         bookingLocation: {
-            type: Datatypes.STRING //assuming address. Use one stored in users unless otherwise specified
+            type: DataTypes.STRING //assuming address. Use one stored in users unless otherwise specified
         },
         bookingSpecialrequests: {
-            type: Datatypes.STRING
+            type: DataTypes.STRING
         },
         //USE STORED UNLESS SPECIFIED
         bookingStove: {
-            type: Datatypes.STRING, //Making this string rather than Boolean so that we can pass in the type of grill
+            type: DataTypes.STRING, //Making this string rather than Boolean so that we can pass in the type of grill
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         bookingGrill: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         bookingOven: {
-            type: Datatypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         bookingMicrowave: {
-            type: Datatypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         bookingSink: {
-            type: Datatypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         }
     })

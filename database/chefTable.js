@@ -1,36 +1,36 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function(sequelize, DataTypes) {
     var chefTable = sequelize.define("chefTable", {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         chefQualifications: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             required: true,
             len: [2, 500]
         },
         chefBio: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             required: true,
             len: [2, 3000]
         },
         chefLocation: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             required: true,
             len:[2, 100]
         },
         chefRate: {
-            type: Datatypes.INTEGER // this will be the 1-5 $ estimate. We'll store it as a INT and convert it using javascript to stars or whatever
+            type: DataTypes.INTEGER // this will be the 1-5 $ estimate. We'll store it as a INT and convert it using javascript to stars or whatever
         },
         chefAvailableBoolean: {
-            type: Datatypes.BOOLEAN, //On/off switch for our database.
+            type: DataTypes.BOOLEAN, //On/off switch for our database.
         },
         chefFullAvailability: {
-            type: Datatypes.STRING // Not sure how google Calendar handles storage. For the sake of having it for now, I've put this in. We'll almost certainly need to change this to accept/format the input correctly
+            type: DataTypes.STRING // Not sure how google Calendar handles storage. For the sake of having it for now, I've put this in. We'll almost certainly need to change this to accept/format the input correctly
         },
         chefProfilePictureURL: {
-            type: Datatypes.STRING, //not sure how we're storing images, so for now I'm assuming we pass in an image URL of an image hosted elsewhere
+            type: DataTypes.STRING, //not sure how we're storing images, so for now I'm assuming we pass in an image URL of an image hosted elsewhere
             isUrl: true
         }    
     })

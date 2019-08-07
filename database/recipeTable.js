@@ -1,21 +1,21 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function(sequelize, DataTypes) {
     var recipeTable = sequelize.define("recipeTable", {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         recipeDescription: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             len: [1, 300],
             required: true
         },
         recipeAllergens: {
-            type: Datatypes.INTEGER, // Convert allergens from dropdown into numbers. (ex. almonds = 1, peanuts = 2, etc. Then when checking for allergens check if number = 0 first (which would mean no allergens) to avoid checking everything else)
+            type: DataTypes.INTEGER, // Convert allergens from dropdown into numbers. (ex. almonds = 1, peanuts = 2, etc. Then when checking for allergens check if number = 0 first (which would mean no allergens) to avoid checking everything else)
             required: true
         },
         recipeSiteFavorites: {
-            type: Datatypes.STRING //if we add a top 5/10/15 list
+            type: DataTypes.STRING //if we add a top 5/10/15 list
         }
     })
     return recipeTable

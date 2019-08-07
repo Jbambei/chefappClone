@@ -1,33 +1,33 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function(sequelize, DataTypes) {
     var consumerInfoTable = sequelize.define("consumerInfoTable", {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         consumerAllergies: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         //Kitchen objects. More than likely more will be needed
         consumerStove: {
-            type: Datatypes.STRING, //Making this string rather than Boolean so that we can pass in the type of grill
+            type: DataTypes.STRING, //Making this string rather than Boolean so that we can pass in the type of grill
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         consumerGrill: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         consumerOven: {
-            type: Datatypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         consumerMicrowave: {
-            type: Datatypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         },
         consumerSink: {
-            type: Datatypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             is: ["^[a-z]+$", "i"] // will only allow letters
         }
     })
