@@ -16,12 +16,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-<<<<<<< HEAD
-    phoneNumber: {
-      type: DataTypes.STRING,
-      isNumeric: true
-    }
-=======
     userFirstName: {
       type: DataTypes.STRING,
       required: true,
@@ -42,7 +36,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
   }
 
->>>>>>> 462efd78a450a6ebc85c70b7833ae852173b01cb
   }, {});
   //Associations create a two way connection between tables
   User.associate = function({ AuthToken }) {
@@ -53,10 +46,7 @@ module.exports = (sequelize, DataTypes) => {
   User.authenticate = async function(username, password) {
     const user = await User.findOne({ where: { username }});
     // bcrypt is a one-way hashing algorithm that allows us to store strings ont he database rather than the raw passwords
-    console.log(password);
-    console.log(user.password);
     if (bcrypt.compareSync(password, user.password)) {
-      console.log("yay");
       return user.authorize();
     }
     throw new Error('invalid password');

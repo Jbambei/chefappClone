@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
         let data = await user.authorize();
         
         // send back the new user and auth token to the client {user, authToken}
-        console.log(res.json(data))
+        // console.log(res.json(data))
         return res.json(data);
 
     } catch(err) {
@@ -72,6 +72,7 @@ router.delete('/logout', async (req, res) => {
 // Me Route - get currently logged in user
 router.get('/me', (req, res) => {
     if (req.user) {
+        console.log(req.user)
         return res.send(req.user)
     }
     res.status(404).send(

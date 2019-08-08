@@ -7,7 +7,8 @@ class ClientSignUp extends Component {
       this.state = {
         email: '',
         username: '',
-        password: ''
+        password: '',
+        token:''
       };
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +23,9 @@ class ClientSignUp extends Component {
         email: this.state.email,
         username: this.state.username,
         password: this.state.password
-      }).then(res => console.log(res))
+      }).then(res => {
+          this.setState({token: res.data.authToken.token})
+            console.log(this.state)})
         
       console.log(this.state.email)
       console.log(this.state.username)

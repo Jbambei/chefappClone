@@ -6,7 +6,8 @@ class Login extends Component {
       super(props);
       this.state = {
         username: '',
-        password: ''
+        password: '',
+        token: ''
       };
       this.handleChange = this.handleChange.bind(this)
       this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
@@ -21,14 +22,9 @@ class Login extends Component {
       axios.post(`/login`,{
         username: this.state.username,
         password: this.state.password
-      }).then(({user, authToken}) => {
-        console.log({user, authToken})
-        if (user && authToken.token){
-            document.cookie = authToken.token
-            console.log("cookie taken")
-            window.location="/"
-        }
-    })
+      }).then(res => {
+        this.setState({token: res.data.authToken.token})
+          console.log(this.state)})
       
     };
   
