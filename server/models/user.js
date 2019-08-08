@@ -16,33 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-<<<<<<< HEAD
     phoneNumber: {
       type: DataTypes.STRING,
       isNumeric: true
     }
-=======
-    userFirstName: {
-      type: DataTypes.STRING,
-      required: true,
-      len: [2, 50],
-      is: ["^[a-z]+$", "i"] // will only allow letters
-  },
-  userLastName: {
-      type: DataTypes.STRING,
-      required: true,
-      len: [2, 50],
-      is: ["^[a-z]+$", "i"] // will only allow letters
-  },
-  userPhone: {
-      type: DataTypes.STRING,
-      isNumeric: true          // will only allow numbers
-  },
-  userAddress: {
-      type: DataTypes.STRING
-  }
-
->>>>>>> 462efd78a450a6ebc85c70b7833ae852173b01cb
   }, {});
   //Associations create a two way connection between tables
   User.associate = function({ AuthToken }) {
