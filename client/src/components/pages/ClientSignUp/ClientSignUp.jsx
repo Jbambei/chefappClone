@@ -36,7 +36,7 @@ class ClientSignUp extends Component {
     render(){
       return (
         <div className="ClientSignUp">
-            <form onSubmit={this.handleSubmit}>
+            <form className="form-group" onSubmit={this.handleSubmit}>
               <label htmlFor="email">Enter your email: </label>
               <input
                 id="email"

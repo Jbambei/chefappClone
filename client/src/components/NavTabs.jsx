@@ -13,6 +13,7 @@ function NavTabs() {
                 <Link to="/Login" className="btn btn-link">Login</Link>
                 <Link to="/FindAChef" className="btn btn-link">Find A Chef</Link> 
                 <Link to="/FindAMeal" className="btn btn-link">Find A Meal</Link>
+                <Link to ="/BookNew" className="btn btn-link">New Booking</Link>
             </section>
         </header>
     )

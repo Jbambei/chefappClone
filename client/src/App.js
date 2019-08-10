@@ -7,6 +7,7 @@ import ClientSignUp from './components/pages/ClientSignUp/ClientSignUp'
 import Login from './components/pages/Login/Login'
 import FindAChef from './containers/FindAChef/FindAChef'
 import FindAMeal from './containers/FindAMeal/FindAMeal'
+import BookNew from './components/pages/Bookings/BookNew'
 
 class App extends Component { 
   state = {
@@ -30,6 +31,7 @@ class App extends Component {
         <Route exact path="/Login" component = {Login} />
         <Route exact path="/FindAChef" component = {FindAChef} />
         <Route exact path="/FindAMeal" component = {FindAMeal} />
+        <Route exact path="/BookNew" component = {BookNew} />
       </div>
     </Router>
     )
