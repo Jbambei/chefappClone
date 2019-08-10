@@ -14,6 +14,7 @@ function NavTabs() {
                 <Link to="/FindAChef" className="btn btn-link">Find A Chef</Link> 
                 <Link to="/FindAMeal" className="btn btn-link">Find A Meal</Link>
                 <Link to ="/BookNew" className="btn btn-link">New Booking</Link>
+                <Link to="/tempGeoLocation" className="btn btn-link">tempGeo</Link>
             </section>
         </header>
     )
