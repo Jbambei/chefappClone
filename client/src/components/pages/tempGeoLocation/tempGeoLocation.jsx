@@ -4,85 +4,39 @@ import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
  
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
  
-class tempGeoLocation extends Component {
-//   static defaultProps = {
-//     center: {
-//       lat: 28.520830,
-//       lng: -81.459330
-//     },
-//     zoom: 11
-//   };
-
+export class tempGeoLocation extends Component {
   constructor(props) {
-      super(props);
-      this.state = {
-          chefs: [
-              {
-                  id: 1,
-                  latitude: 21.520830,
-                  longitude: 81.46894
-                },
-              {id: 2,
-                latitude: 20.520824,
-                longitude: 82.48385}
-          ],
-          center: {
-            lat: 28.520830,
-            lng: -81.459330
-          },
-          zoom: 11
-      }
+    super(props);
+
+    this.state = {
+      chefs: [{lat: 28.513170, lng: -81.514730},
+              {latitude: 28.513170, longitude: -81},
+              {latitude: 33, longitude: -88},
+              {latitude: 26, longitude: -90},
+              {latitude: 22, longitude: -84},
+              {latitude: 20, longitude: -85}]
+    }
   }
 
-    displayMarkers = () => {
-        
-        console.log( this.state.chefs.map((chef, index) => {
-            console.log("markers should have loaded")
-            console.log(chef);
-            return <Marker key={index} position={{
-                lat: chef.latitude,
-                lng: chef.longitude
-            }}
-            
-            onClick={() => console.log("You clicked me!")} />
-        }))
+  displayMarkers = () => {
+    return this.state.chefs.map((chef, index) => {
+      return <Marker key={index} id={index} position={{
+       lat: chef.latitude,
+       lng: chef.longitude
+     }}
+     onClick={() => console.log("You clicked me!")} />
+    })
+  }
 
-    }
-//   onComponentMount= () => {
-//     findNearbyChefs()
-//   }
-
-  //findNearbyChefs = () => {
-      //axios.get(...)
-//   }
- 
   render() {
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
         <Map
           google={this.props.google}
-        //   bootstrapURLKeys={{ key: 'AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM'}}
-          initialCenter={this.state.center}
-          zoom={this.state.zoom}
+          zoom={8}
+          initialCenter={{ lat: 28, lng: -81}}
         >
-          {/* <Marker position={{ lat:28.520830, lng:-81.459330 }}
-            // lat={28.520830}
-            // lng={-81.459330}
-            // text="My Marker"
-          /> */}
-          {this.state.chefs.map(chef => {
-            console.log("markers should have loaded")
-            console.log(chef);
-            return <Marker key={chef.id} position={{
-                lat: chef.latitude,
-                lng: chef.longitude
-            }}
-            
-            onClick={() => console.log("You clicked me!")} />
-        })}
+          {this.displayMarkers()}
         </Map>
-      </div>
     );
   }
 }
