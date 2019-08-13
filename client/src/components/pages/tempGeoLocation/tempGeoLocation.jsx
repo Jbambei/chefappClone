@@ -4,41 +4,63 @@ import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
  
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
  
-export class tempGeoLocation extends Component {
+class geoLocationMap extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      chefs: [{lat: 28.513170, lng: -81.514730},
-              {latitude: 28.513170, longitude: -81},
-              {latitude: 33, longitude: -88},
-              {latitude: 26, longitude: -90},
-              {latitude: 22, longitude: -84},
-              {latitude: 20, longitude: -85}]
-    }
+      markers: [ //test marker
+        {
+          title: "The marker`s title should appear as a tooltip.",
+          name: "NAME",
+          position: { lat: 28.513419, lng: -81 }
+        }
+      ]
+    };
+    this.onClick = this.onClick.bind(this);
   }
 
-  displayMarkers = () => {
-    return this.state.chefs.map((chef, index) => {
-      return <Marker key={index} id={index} position={{
-       lat: chef.latitude,
-       lng: chef.longitude
-     }}
-     onClick={() => console.log("You clicked me!")} />
-    })
+  onClick(t, map, coord) {
+    const { latLng } = coord;
+    const lat = latLng.lat();
+    const lng = latLng.lng();
+
+    this.setState(previousState => {
+      return {
+        markers: [
+          ...previousState.markers,
+          {
+            title: "",
+            name: "",
+            position: { lat, lng }
+          }
+        ]
+      };
+    });
   }
 
   render() {
     return (
+      <div>
+        <h1 className="text-center">My Maps</h1>
         <Map
           google={this.props.google}
-          zoom={8}
-          initialCenter={{ lat: 28, lng: -81}}
+          style={{ width: "80%", margin: "auto" }}
+          className={"map"}
+          zoom={10}
+          onClick={this.onClick}
         >
-          {this.displayMarkers()}
+          {this.state.markers.map((marker, index) => (
+            <Marker
+              key={index}
+              title={marker.title}
+              name={marker.name}
+              position={marker.position}
+            />
+          ))}
         </Map>
+      </div>
     );
   }
 }
- 
-export default GoogleApiWrapper({apiKey: 'AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM'})(tempGeoLocation);
+
+export default GoogleApiWrapper({apiKey: 'AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM'})(geoLocationMap);
