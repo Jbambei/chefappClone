@@ -23,10 +23,16 @@ class Login extends Component {
         username: this.state.username,
         password: this.state.password
       }).then(res => {
-        this.setState({token: res.data.authToken.token})
+        sessionStorage.setItem('token', res.data.authToken.token)
           console.log(this.state)})
       
     };
+    handleOnClick(event){
+      event.preventDefault();
+      axios.post('/logout', {
+        
+      })
+    }
   
     render(){
       return (

@@ -24,7 +24,7 @@ class ClientSignUp extends Component {
         username: this.state.username,
         password: this.state.password
       }).then(res => {
-          this.setState({token: res.data.authToken.token})
+          sessionStorage.setItem('token', res.data.authToken.token)
             console.log(this.state)})
         
       console.log(this.state.email)

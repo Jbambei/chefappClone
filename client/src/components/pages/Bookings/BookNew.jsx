@@ -213,7 +213,7 @@ class BookNew extends Component {
                     readOnly
                     tabIndex="-1"
                     className="ant-calendar-picker-input ant-input"
-                    value={value && value.format(getFormat(state.showTime)) || ''}
+                    value={value.format(getFormat(state.showTime)) || ''}
                   />
                   <div ref={this.calendarContainerRef} />
                 </span>
