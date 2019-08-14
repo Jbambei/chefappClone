@@ -1,4 +1,5 @@
-​import NodeGeocoder from 'node-geocoder';
+// ​import NodeGeocoder from 'node-geocoder';
+const NodeGeocoder = require('node-geocoder')
 ​
 const options = {
     provider: 'google',

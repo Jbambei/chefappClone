@@ -3,14 +3,13 @@ import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 // import GoogleMapReact from 'google-map-react';
  
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
 class geoLocationMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
       markers: [ //test marker
         {
-          title: "The marker`s title should appear as a tooltip.",
+          title: "The marker`s title should appear as a tooltip.", //currently doesn't
           name: "NAME",
           position: { lat: 28.513419, lng: -81 }
         }
