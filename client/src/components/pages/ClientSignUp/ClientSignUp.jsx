@@ -23,7 +23,7 @@ class ClientSignUp extends Component {
         username: this.state.username,
         password: this.state.password
       }).then(res => {
-          sessionStorage.setItem('token', res.data.authToken.token)
+          localStorage.setItem('token', res.data.authToken.token)
           const loc = window.location.pathname
           const dir = loc.substring(0, loc.lastIndexOf('/'));
           window.location.href = dir + '/FindAMeal'

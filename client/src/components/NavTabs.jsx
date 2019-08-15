@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class NavTabs extends React.Component {
     constructor() {
@@ -10,11 +11,16 @@ class NavTabs extends React.Component {
       }
 
       componentDidMount() {
-        if(sessionStorage.getItem('token') === null){
+        if(localStorage.getItem('token') === null){
           this.setState({ user: false })
         } else { 
           this.setState({ user: true })
         }
+        }
+        
+        logout() {
+                localStorage.removeItem('token');
+                this.setState({ user: false})
         }
 
     render () {
@@ -26,12 +32,11 @@ class NavTabs extends React.Component {
                     </section>
                     <section className="navbar-section">
                         <Link to="/" className="btn btn-link">Home</Link>
-                        <Link to="/ClientSignUp" className="btn btn-link">Sign Up</Link>
-                        <Link to="/Login" className="btn btn-link">Login</Link>
                         <Link to="/FindAChef" className="btn btn-link">Find A Chef</Link> 
                         <Link to="/FindAMeal" className="btn btn-link">Find A Meal</Link>
                         <Link to ="/BookNew" className="btn btn-link">New Booking</Link>
                         <Link to="/tempGeoLocation" className="btn btn-link">tempGeo</Link>
+                        <Link to="/" className="btn btn-link" onClick={() => {this.logout()}}>Logout</Link>
                     </section>
                 </header>
                 )        

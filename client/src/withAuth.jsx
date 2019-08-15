@@ -10,10 +10,10 @@ export default function withAuth(ComponentToProtect) {
       };
     }
     componentDidMount() {
-      if(sessionStorage.getItem('token') === null){
+      if(localStorage.getItem('token') === null){
         this.setState({ loading: false, redirect: true })
       } else { 
-        this.setState({ loading: false })
+        this.setState({ loading: false, redirect: false})
       }
       // fetch('/checkToken')
       //   .then(res => {
