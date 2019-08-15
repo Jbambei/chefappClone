@@ -8,7 +8,6 @@ class ClientSignUp extends Component {
         email: '',
         username: '',
         password: '',
-        token:''
       };
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,13 +23,11 @@ class ClientSignUp extends Component {
         username: this.state.username,
         password: this.state.password
       }).then(res => {
-          this.setState({token: res.data.authToken.token})
-            console.log(this.state)})
-        
-      console.log(this.state.email)
-      console.log(this.state.username)
-      console.log(this.state.password)
-  
+          sessionStorage.setItem('token', res.data.authToken.token)
+          const loc = window.location.pathname
+          const dir = loc.substring(0, loc.lastIndexOf('/'));
+          window.location.href = dir + '/FindAMeal'
+        })
     };
   
     render(){

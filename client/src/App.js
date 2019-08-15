@@ -9,31 +9,21 @@ import FindAChef from './containers/FindAChef/FindAChef'
 import FindAMeal from './containers/FindAMeal/FindAMeal'
 import BookNew from './components/pages/Bookings/BookNew'
 import tempGeoLocation from './components/pages/tempGeoLocation/tempGeoLocation'
+import withAuth from './withAuth'
 
 class App extends Component { 
-  state = {
-    username: "",
-    password: ""
-  }
-
   render() {
-    let name= null;
-
-    if (this.props.confirm) {
-      name = this.props.confirm.username;
-    }
-
     return (
       <Router>
       <div>
-        <NavTabs confirmedUser = {name}/>
+        <NavTabs/>
         <Route exact path="/" component={Home} />
         <Route exact path="/ClientSignUp" component={ClientSignUp} />
         <Route exact path="/Login" component = {Login} />
-        <Route exact path="/FindAChef" component = {FindAChef} />
-        <Route exact path="/FindAMeal" component = {FindAMeal} />
-        <Route exact path="/BookNew" component = {BookNew} />
-        <Route exact path="/tempGeoLocation" component = {tempGeoLocation} />
+        <Route exact path="/FindAChef" component = {withAuth(FindAChef)} />
+        <Route exact path="/FindAMeal" component = {withAuth(FindAMeal)} />
+        <Route exact path="/BookNew" component = {withAuth(BookNew)} />
+        <Route exact path="/tempGeoLocation" component = {withAuth(tempGeoLocation)} />
       </div>
     </Router>
     )
