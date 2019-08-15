@@ -7,7 +7,6 @@ class Login extends Component {
       this.state = {
         username: '',
         password: '',
-        token: ''
       };
       this.handleChange = this.handleChange.bind(this)
       this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
@@ -24,9 +23,9 @@ class Login extends Component {
         password: this.state.password
       }).then(res => {
         localStorage.setItem('token', res.data.authToken.token);
-        const loc = window.location.pathname
+        const loc = Window.location.pathname
         const dir = loc.substring(0, loc.lastIndexOf('/'));
-        window.location.href = dir + '/FindAMeal'
+        Window.location.href = dir + '/FindAMeal'
         })
       
     };

@@ -24,9 +24,9 @@ class ClientSignUp extends Component {
         password: this.state.password
       }).then(res => {
           localStorage.setItem('token', res.data.authToken.token)
-          const loc = window.location.pathname
+          const loc = Window.location.pathname
           const dir = loc.substring(0, loc.lastIndexOf('/'));
-          window.location.href = dir + '/FindAMeal'
+          Window.location.href = dir + '/FindAMeal'
         })
     };
   
