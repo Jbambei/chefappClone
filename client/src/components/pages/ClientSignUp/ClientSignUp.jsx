@@ -26,7 +26,7 @@ class ClientSignUp extends Component {
           localStorage.setItem('token', res.data.authToken.token)
           const loc = window.location.pathname
           const dir = loc.substring(0, loc.lastIndexOf('/'));
-          window.location.href = dir + '/FindAMeal'
+          window.location.pathname = dir + '/FindAMeal'
         })
     };
   
