@@ -25,12 +25,12 @@ class Login extends Component {
         password: this.state.password
       }).then(res => {
         localStorage.setItem('token', res.data.authToken.token);
-        // const loc = window.location.pathname
-        // const dir = loc.substring(0, loc.lastIndexOf('/'));
-        // window.location.pathname = dir + '/FindAMeal'
+        const loc = window.location.pathname
+        const dir = loc.substring(0, loc.lastIndexOf('/'));
+        window.location.pathname = dir + '/FindAMeal'
         // return <Redirect to="/Login" />
-        this.setState({redirect: true})
-        this.renderRedirect();
+        // this.setState({redirect: true})
+        // this.renderRedirect();
         })
       
     };
