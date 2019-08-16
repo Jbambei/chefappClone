@@ -31,7 +31,6 @@ app.use(customAuthMiddleware);
 
 // Serve public folder to request assets
 app.use(express.static(`${clientDir}/build`))
-app.get('/FindAMeal', (req, res) => res.sendStatus(200))
 
 // Routing
 /* Server routes */
