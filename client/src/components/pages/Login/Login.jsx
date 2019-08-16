@@ -8,6 +8,7 @@ class Login extends Component {
       this.state = {
         username: '',
         password: '',
+        redirect: false
       };
       this.handleChange = this.handleChange.bind(this)
       this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
@@ -27,10 +28,18 @@ class Login extends Component {
         // const loc = window.location.pathname
         // const dir = loc.substring(0, loc.lastIndexOf('/'));
         // window.location.pathname = dir + '/FindAMeal'
-        return <Redirect to="/Login" />
+        // return <Redirect to="/Login" />
+        this.setState({redirect: true})
+        this.renderRedirect();
         })
       
     };
+
+      renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to="/Login" />
+        }
+      }
   
     render(){
       return (

@@ -12,11 +12,26 @@ import tempGeoLocation from './components/pages/tempGeoLocation/tempGeoLocation'
 import withAuth from './withAuth'
 
 class App extends Component { 
+  constructor() {
+    super()
+    this.state = {
+      user: false
+    };
+  }
+  componentDidMount() {
+    if(localStorage.getItem('token') === null){
+      this.setState({ user: false })
+    } else { 
+      this.setState({ user: true })
+    }
+    }
+
   render() {
     return (
       <Router>
       <div>
-        <NavTabs/>
+        <NavTabs user={this.state.user}/>
+
         <Route exact path="/" component={Home} />
         <Route exact path="/ClientSignUp" component={ClientSignUp} />
         <Route exact path="/Login" component = {Login} />

@@ -181,7 +181,7 @@ class BookNew extends Component {
                     </div>
                 </div>
                 <div className="form-group">
-                    <label className="form-label" for="input-example-1">Name</label>
+                    <label className="form-label" htmlFor="input-example-1">Name</label>
                     <input className="form-input" type="text" id="input-example-1" placeholder="Name"></input>
                 </div>
                 <div style={{

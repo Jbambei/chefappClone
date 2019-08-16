@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios'
+import { Redirect } from 'react-router-dom';
 
 class ClientSignUp extends Component { 
     constructor(props) {
@@ -8,6 +9,7 @@ class ClientSignUp extends Component {
         email: '',
         username: '',
         password: '',
+        redirect: false
       };
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,10 +29,20 @@ class ClientSignUp extends Component {
           const loc = window.location.pathname
           const dir = loc.substring(0, loc.lastIndexOf('/'));
           window.location.pathname = dir + '/FindAMeal'
+          // this.setState({redirect: true})
+          // this.renderRedirect();
         })
     };
+    // renderRedirect = () => {
+    //   if (this.state.redirect) {
+    //     return <Redirect to="/Login" />
+    //   }
+    // }
   
     render(){
+      if (this.state.redirect) {
+        return <Redirect to="/FindAMeal" />
+      } else
       return (
         <div className="ClientSignUp">
             <form className="form-group" onSubmit={this.handleSubmit}>
