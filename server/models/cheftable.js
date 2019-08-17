@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   chefTable.associate = function(models) {
     // associations can be defined here
+    chefTable.belongsTo(models.User)
   };
   return chefTable;
 };

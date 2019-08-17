@@ -6,13 +6,18 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
   },
+  recipeName: {
+    type: DataTypes.STRING,
+    len: [1, 300],
+    required: true
+  },
   recipeDescription: {
       type: DataTypes.STRING,
       len: [1, 300],
       required: true
   },
   recipeAllergens: {
-      type: DataTypes.INTEGER, // Convert allergens from dropdown into numbers. (ex. almonds = 1, peanuts = 2, etc. Then when checking for allergens check if number = 0 first (which would mean no allergens) to avoid checking everything else)
+      type: DataTypes.STRING, // Convert allergens from dropdown into numbers. (ex. almonds = 1, peanuts = 2, etc. Then when checking for allergens check if number = 0 first (which would mean no allergens) to avoid checking everything else)
       required: true
   },
   recipeSiteFavorites: {
@@ -21,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   recipeTable.associate = function(models) {
     // associations can be defined here
+    recipeTable.belongsTo(models.User)
   };
   return recipeTable;
 };
