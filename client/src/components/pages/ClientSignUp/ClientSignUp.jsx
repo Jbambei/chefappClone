@@ -9,9 +9,9 @@ class ClientSignUp extends Component {
       email: '',
       username: '',
       password: '',
-      firstname: this.state.firstname,
-      lastname: this.state.lastname,
-      phone: this.state.phone,
+      firstname: '',
+      lastname: '',
+      phone: '',
       isChef: false
 
     };
@@ -34,9 +34,9 @@ class ClientSignUp extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios.post(`/register`, {
-      firstname: this.state.firstname,
-      lastname: this.state.lastname,
-      phone: this.state.phone,
+      userFirstName: this.state.firstname,
+      userLastName: this.state.lastname,
+      userPhone: this.state.phone,
       email: this.state.email,
       username: this.state.username,
       password: this.state.password,
