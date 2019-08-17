@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
-import axios from 'axios' 
 // import GoogleMapReact from 'google-map-react';
  
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -10,7 +9,7 @@ class geoLocationMap extends Component {
     this.state = {
       markers: [ //test marker
         {
-          title: "The marker`s title should appear as a tooltip.", //currently doesn't
+          title: "The marker`s title should appear as a tooltip.", //currently doesn't lol
           name: "NAME",
           position: { lat: 28.513419, lng: -81 }
         }
@@ -38,14 +37,6 @@ class geoLocationMap extends Component {
     });
   }
 
-  componentDidMount() {
-    axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=2638WindsorHillDrive&destination=9117PalmTreeDrive&key=AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM&avoid=tolls') //pass in URL from textbox. Hardcoded for now
-    .then((response) => {
-      console.log(response)
-      console.log(response.routes.legs.steps.html_instructions)
-    })
-  }
-
   render() {
     return (
       <div>
@@ -54,7 +45,7 @@ class geoLocationMap extends Component {
           google={this.props.google}
           style={{ width: "80%", margin: "auto" }}
           className={"map"}
-          zoom={10}
+          zoom={8}
           onClick={this.onClick}
         >
           {this.state.markers.map((marker, index) => (
