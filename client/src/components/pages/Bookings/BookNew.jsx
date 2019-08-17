@@ -207,13 +207,13 @@ class BookNew extends Component {
               return (
                 <span tabIndex="0" onMouseDown={this.onMouseDown} onFocus={this.onFocus}>
                   <input
-                    placeholder="please select"
+                    placeholder="Select Date and Time"
                     style={{ width: 250 }}
                     disabled={state.disabled}
                     readOnly
                     tabIndex="-1"
                     className="ant-calendar-picker-input ant-input"
-                    value={value && value.format(getFormat(state.showTime)) || ''}
+                    value={value.format(getFormat(state.showTime)) || ''}
                   />
                   <div ref={this.calendarContainerRef} />
                 </span>

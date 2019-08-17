@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   userTypeTable.associate = function(models) {
     // associations can be defined here
+    userTypeTable.belongsTo(models.User);
   };
+  
   return userTypeTable;
 };

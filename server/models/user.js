@@ -34,6 +34,9 @@ module.exports = (sequelize, DataTypes) => {
   },
   userAddress: {
       type: DataTypes.STRING
+  },
+  isChef: {
+    type: DataTypes.BOOLEAN
   }
 
   }, {});
