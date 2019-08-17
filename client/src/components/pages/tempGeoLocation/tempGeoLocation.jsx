@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+import axios from 'axios' 
 // import GoogleMapReact from 'google-map-react';
  
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -35,6 +36,14 @@ class geoLocationMap extends Component {
         ]
       };
     });
+  }
+
+  componentDidMount() {
+    axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=2638WindsorHillDrive&destination=9117PalmTreeDrive&key=AIzaSyArYUj_aKKGPm5FDl1dAf_CN_Ni62nkAMM&avoid=tolls') //pass in URL from textbox. Hardcoded for now
+    .then((response) => {
+      console.log(response)
+      console.log(response.routes.legs.steps.html_instructions)
+    })
   }
 
   render() {
