@@ -9,6 +9,9 @@ class ClientSignUp extends Component {
       email: '',
       username: '',
       password: '',
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      phone: this.state.phone,
       isChef: false
 
     };
