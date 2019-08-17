@@ -9,7 +9,7 @@ class geoLocationMap extends Component {
     this.state = {
       markers: [ //test marker
         {
-          title: "The marker`s title should appear as a tooltip.", //currently doesn't
+          title: "The marker`s title should appear as a tooltip.", //currently doesn't lol
           name: "NAME",
           position: { lat: 28.513419, lng: -81 }
         }
@@ -45,7 +45,7 @@ class geoLocationMap extends Component {
           google={this.props.google}
           style={{ width: "80%", margin: "auto" }}
           className={"map"}
-          zoom={10}
+          zoom={8}
           onClick={this.onClick}
         >
           {this.state.markers.map((marker, index) => (
